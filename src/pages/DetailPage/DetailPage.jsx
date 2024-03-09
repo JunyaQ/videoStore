@@ -8,6 +8,7 @@ function DetailPage({type}){
  const { id } = useParams();
  const [item, setItem] = useState(null);
  console.log(type);
+ //local
  useEffect(() => {
    fetch(`http://localhost:3001/${type}/${id}`||`/api/${type}/${id}`)
      .then(response => response.json())
@@ -23,6 +24,7 @@ function DetailPage({type}){
      .catch(error => console.error('Error:', error));
  }, [type, id]);
 
+ //deploy
 // useEffect(() => {
 //     console.log('id: '+id);
 //     console.log('type: '+type);

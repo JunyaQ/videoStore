@@ -5,6 +5,7 @@ import TabOptions from '../../components/TabOptions/TabOptions';
 function MoviePage() {
     const [films, setFilms] = useState([]);
 
+    //local
     useEffect(()=>{
         fetch("http://localhost:3001/movies"||'api/movies')
         .then((res)=>{
@@ -18,6 +19,7 @@ function MoviePage() {
         })
     },[])
 
+    //deploy
     // useEffect(()=>{
     //     fetch('/api/movies')
     //     .then((res)=>{

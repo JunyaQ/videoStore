@@ -4,21 +4,9 @@ import TabOptions from '../../components/TabOptions/TabOptions';
 function TvPage() {
     const [tvs, setTvs] = useState([]);
 
-    // useEffect(()=>{
-    //     fetch("http://localhost:3001/tvs"||'api/tvs')
-    //     .then((res)=>{
-    //       return res.json()
-    //     })
-    //     .then(json=>{    
-    //           setTvs(json);
-    //     })
-    //     .catch((err)=>{
-    //         console.log(`Error ${err}`);
-    //     })
-    // },[])
-
+    //local
     useEffect(()=>{
-        fetch('/api/tvs')
+        fetch("http://localhost:3001/tvs"||'api/tvs')
         .then((res)=>{
           return res.json()
         })
@@ -29,6 +17,20 @@ function TvPage() {
             console.log(`Error ${err}`);
         })
     },[])
+
+    //deploy
+    // useEffect(()=>{
+    //     fetch('/api/tvs')
+    //     .then((res)=>{
+    //       return res.json()
+    //     })
+    //     .then(json=>{    
+    //           setTvs(json);
+    //     })
+    //     .catch((err)=>{
+    //         console.log(`Error ${err}`);
+    //     })
+    // },[])
 
     return(
         <Container fluid>

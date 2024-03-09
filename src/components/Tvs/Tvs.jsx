@@ -7,6 +7,7 @@ import '../Movies/Movies.css';
 function Tvs(){
     const [tvs, setTvs] = useState([]);
 
+    //deploy
     // useEffect(() => {
     //     fetch('/api/tvs')
     //     .then(response => response.json())
@@ -14,6 +15,7 @@ function Tvs(){
     //     .catch(error => console.error('Error:', error));
     // }, []);
 
+    //local
     useEffect(() => {
         fetch('http://localhost:3001/tvs'||'/api/tvs')
         .then(response => response.json())
