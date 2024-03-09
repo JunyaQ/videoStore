@@ -1,0 +1,17 @@
+ /* -----------------Navigation ----------------*/
+ .navigation{
+    background-color: var(--darkBlue);
+  }
+  .navlinks .navlinks{
+    color: var(--white) !important;
+    font-size: 1.5rem;
+  }
+  
+  @media(max-width: 600px){
+  .navphone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  }

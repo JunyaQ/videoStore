@@ -1,0 +1,78 @@
+:root{
+  --darkBlue: #2d728f;
+  --munsell: #3B8EA5;
+  --vanilla: #F5EE9E;
+  --orange: #F49E4C;
+  --brick: #AB3428;
+  --shadow: #D0D0D0;
+  --white: #FFFFFF;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body{
+  min-height: 45vh;
+}
+
+ /* -----------------Hero ----------------*/
+ .heroSection{
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+  position: relative;
+  width: 100%;
+  box-shadow: 10px 5px 5px var(--shadow);
+}
+.heroimg{
+width: 100%; 
+height: auto;
+}
+
+.hero{
+  max-width: 100%;
+  
+}
+
+ /* -----------------Movie Section, Tv Section ----------------*/
+.movies{
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 5vh;
+  }
+.movieSection{
+  padding-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+/* sharing with tabOptions */
+
+  /* smart phone  */
+@media(max-width: 600px){
+  .tvmovieimg{
+    width: 15vw;
+  }
+  .movieSection{
+    padding-top: 5vh;
+    margin-bottom: 5vh;
+  }
+  .movies{
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-bottom: 2vh;
+  }
+  
+}
+
+
+
+
+ 
+
+ 
+
+ 
+  
+  

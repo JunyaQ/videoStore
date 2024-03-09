@@ -1,0 +1,6 @@
+.comingsoon{
+    min-height: 50vh;
+    text-align: center;
+    color: var(--orange);
+    text-shadow: 2px 1px 1px var(--vanilla);
+  }

@@ -1,0 +1,42 @@
+/* ----------------- Content ----------------*/
+.content-section{
+    width: auto;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    background-color: var(--darkBlue);
+    box-shadow: 10px 5px 5px var(--munsell);
+   }
+  
+  
+  .content-row {
+    align-items: center; 
+  }
+  .content-title{
+    text-align: center;
+    justify-content: left;
+    color: var(--vanilla);
+    text-shadow: 2px 1px 1px var(--orange);
+  }
+  
+  .content-title h1{
+    font-size: 2rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0; 
+    overflow: visible 
+  }
+  
+  .content-v {
+    width: 10vw;
+    height: auto;
+    margin-left: 10vw;
+  }
+  
+  /* smaller than 768 tested*/
+  @media (max-width: 768px) {
+    .content-v {
+    display: none;
+    }
+  
+  
+  }

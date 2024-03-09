@@ -1,0 +1,51 @@
+/* ----------------- Login/Signup  ----------------*/
+.loginBtn{
+    background-color: var(--darkBlue) !important;
+    text-align: center;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-bottom: 2vh;
+    margin-top: 5vh;
+    color: white;
+    border: none;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  loginBtn:hover{
+    opacity: 0.7;
+  }
+  .form-header{
+    text-align: center;
+    margin-top: 5vh;
+  }
+  .form-body form{
+    max-width: 620px;
+    margin: auto;
+    padding: 10px;
+    background: white;
+  }
+  input {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: whitesmoke;
+  }
+  input:focus {
+    background-color: gainsboro;
+    outline: none;
+  }
+  .switchline{
+    margin-left: 20vw;
+    margin-right: 30vw;
+    display: inline-block;
+  }
+  .switch{
+    color: var(--bric);
+    margin-left: 5px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,54 @@
+
+ /* ----------------- Detail ----------------*/
+ .detailContainer{
+    display: grid;
+    margin-right: 2vw;
+  }
+  .movieimg-container{
+    display: flex;
+    justify-content: center;
+  }
+  .movieimg{
+    width:10vw;
+    height: auto;
+    margin-right: 2vw;
+  }
+  .detailTitle{
+    font-size: 4vw !important; 
+    font-weight: bold;
+    text-align: center;
+  }
+  .category {
+    display: inline-block; 
+    margin-right: 1vw; 
+    margin-left: 1vw;
+  }
+  .description{
+    margin-right: 5vw;
+    margin-left: 5vw;
+  }
+  .buyBtn{
+    margin-right: 2vw;
+    margin-left: 2vw;
+    margin-top: 10vh;
+    background-color: var(--munsell);
+    color: var(--white);
+    box-shadow: 2px 1px 1px var(--shadow);
+  }
+  .rentBtn{
+    margin-right: 2vw;
+    margin-left: 2vw;
+    margin-top: 10vh;
+    background-color: var(--munsell);
+    color: var(--white);
+    box-shadow: 2px 1px 1px var(--shadow);
+  }
+  .buyBtn:hover .rentBtn:hover{
+    background-color: var(--orange);
+  }
+  .category-container{
+    text-align: center;
+  }
+  .btn-container{
+    text-align: center;
+  }

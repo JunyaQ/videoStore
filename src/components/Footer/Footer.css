@@ -1,0 +1,54 @@
+ /* -----------------Footer ----------------*/
+ .downloadimg{
+    width: 10vw;
+    left: 0; 
+    margin-bottom: 2vh;
+}
+/* small screen other wise download img too small */
+@media(max-width: 850px){
+  .downloadimg{
+    width: 20vw;
+    margin-left: 20vw;
+  }
+  .infolist{
+    font-size: 0.8rem !important;
+    
+  }
+  .fheading{
+    font-size: 1.3rem !important;
+
+  }
+}
+@media(max-width: 300px){
+  .downloadimg{
+    width: 40vw;
+    margin-left: 30vw;
+  }
+}
+.info{
+    margin-bottom:0;    
+    background-color: var(--darkBlue);
+    color: var(--white);
+}
+.infolist{
+    list-style: none;
+    font-size: 1rem;
+}
+.infolist a{
+  text-decoration: none;
+  color: var(--white);
+}
+.fheading{
+    font-weight: bolder;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 1px  var(--shadow);
+    margin-bottom: 2vh;
+}
+.infolist li{
+    margin-top: 1vh;
+}
+.media{
+    margin-bottom: 1vh;
+    bottom: 10vh;
+}
+ 

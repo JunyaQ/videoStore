@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    align-items: stretch;
+    width: 100vw;
+  }
+  .detailInfo-container{
+    background-color: black;
+    min-width: 50vw;
+    max-width: 20vw;
+    color: white;
+    flex: 1;
+    padding: 0;
+    margin: 0;
+  }
+  .image-background {
+    flex: 1;
+    display: block;
+    object-fit: cover;
+    max-width: 50vw;
+    height: auto;
+  }
+  .rightImg{
+    width: 35vw;
+    height: auto;
+  }
+  
+  @media(max-width: 600px){
+    .image-background{
+      display: none;
+    }
+   
+  
+  }

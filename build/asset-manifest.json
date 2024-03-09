@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cd17b600.css",
+    "main.js": "/static/js/main.6043d77d.js",
+    "static/js/453.7a2225ce.chunk.js": "/static/js/453.7a2225ce.chunk.js",
+    "static/media/hero3.jpeg": "/static/media/hero3.87c546ce9ea02aeec2eb.jpeg",
+    "static/media/hero5.jpeg": "/static/media/hero5.8ae323ef5ff6f457a436.jpeg",
+    "static/media/hero7.jpeg": "/static/media/hero7.a6244c70b4ebab094fc5.jpeg",
+    "static/media/hero8.jpeg": "/static/media/hero8.92064b9404827c44beb2.jpeg",
+    "static/media/hero4.jpeg": "/static/media/hero4.422117c54474e1dffda7.jpeg",
+    "static/media/hero1.jpeg": "/static/media/hero1.fd40224482546405e090.jpeg",
+    "static/media/hero6.jpeg": "/static/media/hero6.f4f80fc3ff44a21cf7df.jpeg",
+    "static/media/hero2.jpeg": "/static/media/hero2.1961b71c092df7d867b0.jpeg",
+    "static/media/appleDownload.png": "/static/media/appleDownload.85a3244367fe85be84d2.png",
+    "static/media/googlePlay.png": "/static/media/googlePlay.391d864f03d898f9fbb6.png",
+    "index.html": "/index.html",
+    "main.cd17b600.css.map": "/static/css/main.cd17b600.css.map",
+    "main.6043d77d.js.map": "/static/js/main.6043d77d.js.map",
+    "453.7a2225ce.chunk.js.map": "/static/js/453.7a2225ce.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd17b600.css",
+    "static/js/main.6043d77d.js"
+  ]
+}
