@@ -5,12 +5,12 @@ function Content(){
   const [films, setFilms] = useState([]);
 
   //local
-  useEffect(() => {
-      fetch('http://localhost:3001/movies'||'api/movies')
-      .then(response => response.json())
-      .then(data => setFilms(data))
-      .catch(error => console.error('Error:', error));
-  }, []);
+  // useEffect(() => {
+  //     fetch('http://localhost:3001/movies'||'api/movies')
+  //     .then(response => response.json())
+  //     .then(data => setFilms(data))
+  //     .catch(error => console.error('Error:', error));
+  // }, []);
 
   //deploy
 //   useEffect(() => {

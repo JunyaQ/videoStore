@@ -11,21 +11,16 @@ import './Movies.css'
 function Movies(){
     const [films, setFilms] = useState([]);
 
-    //local
     useEffect(() => {
-        fetch('http://localhost:3001/movies'||'api/movies')
-        .then(response => response.json())
-        .then(data => setFilms(data))
-        .catch(error => console.error('Error:', error));
-    }, []);
-
-    //deploy
-    // useEffect(() => {
-    //     fetch('/api/movies')
-    //     .then(response => response.json())
-    //     .then(data => setFilms(data))
-    //     .catch(error => console.error('Error:', error));
-    // }, []);
+        fetch('http://localhost:8080/movies')
+          .then(res=> res.json())
+          .then(data =>{
+            console.log(data.body);
+            setFilms(data.body)
+          })
+          .catch(err => console.log(`Error from movie.jsx: ${err}`));
+      }, []);
+  
   
  
     return(
@@ -40,8 +35,8 @@ function Movies(){
         <Row md={6} className='justify-content-center'>
        {films.slice(0,4).map(film => (
          <Col className="d-flex justify-content-center movieSection">
-        <Link to={`/movies/${film.id}`}>
-        <img src= {`${film.img}`} className='tvmovieimg' /> 
+        <Link to={`/movie/${film.id}`}>
+        <img src= {`${film.smallPoster}`} className='tvmovieimg' /> 
         </Link>
         </Col>
     ))}

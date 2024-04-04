@@ -5,18 +5,15 @@ function TvPage() {
     const [tvs, setTvs] = useState([]);
 
     //local
-    useEffect(()=>{
-        fetch("http://localhost:3001/tvs"||'api/tvs')
-        .then((res)=>{
-          return res.json()
-        })
-        .then(json=>{    
-              setTvs(json);
-        })
-        .catch((err)=>{
-            console.log(`Error ${err}`);
-        })
-    },[])
+    useEffect(() => {
+        fetch('http://localhost:8080/tvs')
+          .then(res=> res.json())
+          .then(data =>{
+            console.log(data.body);
+            setTvs(data.body)
+          })
+          .catch(err => console.log(`Error from tvpage.jsx: ${err}`));
+      }, []);
 
     //deploy
     // useEffect(()=>{

@@ -9,20 +9,30 @@ function DetailPage({type}){
  const [item, setItem] = useState(null);
  console.log(type);
  //local
+//  useEffect(() => {
+//    fetch()
+//      .then(response => response.json())
+//      .then(data => {
+//        if (!id) {
+//          if (data.length > 0) {
+//            setItem(data[0]);
+//          }
+//        } else {
+//          setItem(data);
+//        }
+//      })
+//      .catch(error => console.error('Error:', error));
+//  }, []);
+
  useEffect(() => {
-   fetch(`http://localhost:3001/${type}/${id}`||`/api/${type}/${id}`)
-     .then(response => response.json())
-     .then(data => {
-       if (!id) {
-         if (data.length > 0) {
-           setItem(data[0]);
-         }
-       } else {
-         setItem(data);
-       }
-     })
-     .catch(error => console.error('Error:', error));
- }, [type, id]);
+  fetch(`http://localhost:8080/movie/${id}`)
+    .then(res=> res.json())
+    .then(data =>{
+      console.log(data.body);
+      setItem(data.body)
+    })
+    .catch(err => console.log(`Error from movie.jsx: ${err}`));
+}, [type, id]);
 
  //deploy
 // useEffect(() => {
@@ -49,7 +59,7 @@ function DetailPage({type}){
   <div className="container">
   <div className="detailInfo-container">
     <Detail
-      img={item.img}
+      img={item.smallPoster}
       title={item.title}
       type={item.type}
       year={item.year}

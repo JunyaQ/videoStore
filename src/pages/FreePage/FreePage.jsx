@@ -15,11 +15,14 @@ function FreePage() {
 
       // for local
       useEffect(() => {
-        fetch('http://localhost:3001/movies'||'api/movies')
-        .then(response => response.json())
-        .then(data => setFilms(data))
-        .catch(error => console.error('Error:', error));
-    }, []);
+        fetch('http://localhost:8080/movies')
+          .then(res=> res.json())
+          .then(data =>{
+            console.log(data.body);
+            setFilms(data.body)
+          })
+          .catch(err => console.log(`Error from freepage.jsx: ${err}`));
+      }, []);
     
     // for deploy
   //   useEffect(() => {
@@ -33,7 +36,7 @@ function FreePage() {
     //  only have 15 movies
       function getMovienumber(){
         const date = new Date().getDate();
-        const reminder = date%15;
+        const reminder = date%14;
         return reminder;
       }
       const movienum = getMovienumber();
@@ -47,8 +50,8 @@ function FreePage() {
         <h1 className="title">TODAY ONLY! </h1>
         <h1 className='freeTitle'>Watch it for free</h1>
         <h5 className="freeTitle">{currentDate}</h5>
-        <Link  className= "cardName" to={`/movies/${movienum}`}>
-        <Card pic={films?.[movienum-1]?.img} name={films?.[movienum-1]?.title}/>
+        <Link  className= "cardName" to={`/movie/${movienum}`}>
+        <Card pic={films?.[movienum-1]?.smallPoster} name={films?.[movienum-1]?.title}/>
         </Link>
         </body>
 

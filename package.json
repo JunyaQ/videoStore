@@ -19,12 +19,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm run server & npm run watch",
+    "start": "npm run watch",
     "watch": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "npx json-server --watch db/db.json --port 3001"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

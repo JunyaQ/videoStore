@@ -25,9 +25,6 @@ function TabOptions({dbdata, type}){
         <Nav.Link eventKey="default" >Most Watched</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link eventKey="release">Release Date</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
       <Nav.Link eventKey="recent">Recently Added</Nav.Link>
       </Nav.Item>
     </Nav>
@@ -38,26 +35,14 @@ function TabOptions({dbdata, type}){
            {dbdata.map(item => (
              <Col className="d-flex justify-content-center movieSection" >
                 {/* use link and id, plus dbname movie1 or tv1 */}
-            <Link to={`/${type}/${item.id}`}>
-            <img src={`${item.img}`} className='tvmovieimg'/> 
+            <Link to={`/movie/${item.id}`}>
+            <img src={`${item.smallPoster}`} className='tvmovieimg'/> 
             </Link>
             </Col>
         ))}
             </Row>
         </Tab.Pane>
-        {/* sort by date */}
-        <Tab.Pane eventKey="release">
-        {/* <p>Release Date</p> */}
-        <Row md={6} className='justify-content-left'>
-           {yearData.map(item => (
-             <Col className="d-flex justify-content-center movieSection">
-           <Link to={`/${type}/${item.id}`}>
-           <img src={`${item.img}`} className='tvmovieimg'/> 
-            </Link>
-            </Col> 
-        ))}
-            </Row>
-        </Tab.Pane>
+  
         {/* sort by alphabet */}
         <Tab.Pane eventKey="recent">
         {/* <p>Recent Added</p> */}
@@ -65,7 +50,7 @@ function TabOptions({dbdata, type}){
            {alphabetData.map(item => (
              <Col className="d-flex justify-content-center movieSection">
            <Link to={`/${type}/${item.id}`}>
-           <img src={`${item.img}`} className='tvmovieimg'/> 
+           <img src={`${item.smallPoster}`} className='tvmovieimg'/> 
             </Link>
             </Col> 
         ))}
