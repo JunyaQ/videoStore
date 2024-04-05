@@ -1,60 +1,68 @@
-    import React, { useState } from 'react';
-    import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 
-    function Login (){
+function Login() {
     const [formState, setFormState] = useState({ 
-    email: '', 
-    password: '' ,
+        email: '', 
+        password: '',
     });
 
-    // update state based on form input changes
     const handleChange = (event) => {
-    const { name, value } = event.target;
-
-    setFormState({
-    ...formState,
-    [name]: value,
-    });
+        const { name, value } = event.target;
+        setFormState(prevState => ({
+            ...prevState,
+            [name]: value,
+        }));
     };
 
-    // submit form
-    const handleFormSubmit =()=> {
-    // console.log("Submit a User login, logged in")
-    alert("User: "+ formState.email+ "Log ii with password: "+ formState.password);
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault(); 
+
+        fetch('http://localhost:8080/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formState),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Login failed');
+            }
+            return response.json(); 
+        })
+        .then(data => {
+            console.log("Login successful:", data);
+            alert("Login successful!");
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert("Login failed. Please check your email and password.");
+        });
     };
+
     return (
-    <div className="flex-row justify-center mb-4">
-    <div>
-    <div className="form">
-      <div className="form-body">
-        <div className="form-container">
-    <form onSubmit={handleFormSubmit}>
-    <div className='label'>
-    <label htmlFor="email" className='label'><b>Email:</b></label>
-    <input className="form-input" placeholder="Your email"  name="email"   type="email" id="email"
-    value={formState.email}
-    onChange={handleChange}
-    />
-    </div>
-    <br/>
-    <div className='label'>
-    <label htmlFor="password"><b>Password:</b></label>
-    <input className="form-input" placeholder="******"  name="password"  type="password"  id="password"
-    value={formState.password}
-    onChange={handleChange}
-    />
-    </div>
-    <button className="loginBtn label" type="submit">
-    Login
-    </button>
-    </form>
-    </div>
-
-      </div>
-    </div>
-    </div>
-    </div>
+        <div className="flex-row justify-center mb-4">
+            <div className="form">
+                <div className="form-body">
+                    <form onSubmit={handleFormSubmit}>
+                        <div className='label'>
+                            <label htmlFor="email" className='label'><b>Email:</b></label>
+                            <input className="form-input" placeholder="Your email" name="email" type="email" value={formState.email} onChange={handleChange} />
+                        </div>
+                        <br/>
+                        <div className='label'>
+                            <label htmlFor="password"><b>Password:</b></label>
+                            <input className="form-input" placeholder="******" name="password" type="password" value={formState.password} onChange={handleChange} />
+                        </div>
+                        <button className="loginBtn label" type="submit">
+                            Login
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
     );
-    };
+};
 
-    export default Login;
+export default Login;

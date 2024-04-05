@@ -5,12 +5,15 @@ function Content(){
   const [films, setFilms] = useState([]);
 
   //local
-  // useEffect(() => {
-  //     fetch('http://localhost:3001/movies'||'api/movies')
-  //     .then(response => response.json())
-  //     .then(data => setFilms(data))
-  //     .catch(error => console.error('Error:', error));
-  // }, []);
+  useEffect(() => {
+    fetch('http://localhost:8080/movies')
+      .then(res=> res.json())
+      .then(data =>{
+        console.log(data.body);
+        setFilms(data.body)
+      })
+      .catch(err => console.log(`Error from tvs.jsx: ${err}`));
+  }, []);
 
   //deploy
 //   useEffect(() => {
@@ -20,10 +23,10 @@ function Content(){
 //     .catch(error => console.error('Error:', error));
 // }, []);
 
-  const url1 = films?.[1]?.img;
-  const url2 = films?.[4]?.img;
-  const url3 = films?.[6]?.img;
-  const url4 = films?.[10]?.img;
+  const url1 = films?.[1]?.smallPoster;
+  const url2 = films?.[3]?.smallPoster;
+  const url3 = films?.[12]?.smallPoster;
+  const url4 = films?.[2]?.smallPoster;
 
 return(
 <div>
