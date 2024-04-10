@@ -7,50 +7,28 @@ import './DetailPage.css';
 function DetailPage({type}){
  const { id } = useParams();
  const [item, setItem] = useState(null);
- console.log(type);
  //local
-//  useEffect(() => {
-//    fetch()
-//      .then(response => response.json())
-//      .then(data => {
-//        if (!id) {
-//          if (data.length > 0) {
-//            setItem(data[0]);
-//          }
-//        } else {
-//          setItem(data);
-//        }
-//      })
-//      .catch(error => console.error('Error:', error));
-//  }, []);
-
  useEffect(() => {
-  fetch(`http://localhost:8080/movie/${id}`)
-    .then(res=> res.json())
-    .then(data =>{
-      console.log(data.body);
-      setItem(data.body)
-    })
-    .catch(err => console.log(`Error from movie.jsx: ${err}`));
-}, [type, id]);
+  const fetchMovieDetails = async () => {
+    try {
+      const response = await fetch(`http://localhost:8080/movie/${id}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setItem(data.body[0]); 
+      console.log(item);
+    } catch (error) {
+      console.error("Fetching movie details failed:", error);
+    }
+  };
 
- //deploy
-// useEffect(() => {
-//     console.log('id: '+id);
-//     console.log('type: '+type);
-//     fetch(`/api/${type}/${id}`)
-//          .then(response => response.json())
-//      .then(data => {
-//        if (!id) {
-//          if (data.length > 0) {
-//            setItem(data[0]);
-//          }
-//        } else {
-//          setItem(data);
-//        }
-//      })
-//      .catch(error => console.error('Error:', error));
-//  }, [type, id]);
+  if (id) {
+    fetchMovieDetails(); 
+  }
+}, [id]);
+
+
 
  if (!item) {
    return <div>Sorry something wrong .... T^T</div>;
@@ -59,17 +37,15 @@ function DetailPage({type}){
   <div className="container">
   <div className="detailInfo-container">
     <Detail
-      img={item.smallPoster}
+      smallPoster={item.smallPoster}
       title={item.title}
-      type={item.type}
-      year={item.year}
       description={item.description}
-      rentPrice={item.rentPrice}
-      buyPrice={item.buyPrice}
+      priceRent={item.priceRent}
+      pricePurchase={item.pricePurchase}
     />
   </div>
   <div className="image-background">
-    <img src={`${item.background}`} alt="background" className="rightImg"/>
+    <img src={`${item.largePoster}`} alt="background" className="rightImg"/>
     </div>
 </div>
 
