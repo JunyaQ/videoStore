@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useUser } from './userContext'; // Import useUser hook
 
 function Login() {
     const [formState, setFormState] = useState({ 
         email: '', 
         password: '',
     });
+
+    const { setUser } = useUser(); // Use the setUser function from context
+    const navigate = useNavigate(); // Initialize useNavigate
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -13,7 +18,6 @@ function Login() {
             [name]: value,
         }));
     };
-
 
     const handleFormSubmit = (event) => {
         event.preventDefault(); 
@@ -33,7 +37,8 @@ function Login() {
         })
         .then(data => {
             console.log("Login successful:", data);
-            alert("Login successful!");
+            setUser(data); // Set user data upon successful login
+            navigate('/'); // Navigate to the main page
         })
         .catch(error => {
             console.error('Error:', error);

@@ -15,3 +15,26 @@
     width: 100%;
   }
   }
+
+  .search-btn {
+    background-color: var(--darkBlue); 
+    border: none; 
+}
+
+.search-btn .fa { 
+    color: var(--white); 
+}
+.search-btn :hover{
+  color: black;
+  background-color: var(--darkBlue);
+  opacity: 0.9;
+}
+
+@media(max-width: 600px){
+  .navphone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+  }
+}
