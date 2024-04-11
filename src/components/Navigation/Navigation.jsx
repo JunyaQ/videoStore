@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Nav, Navbar, Form, FormControl, Button } from "react-bootstrap";
+import { Container, Nav, Navbar, Form, FormControl } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import { RiMovie2Fill } from "react-icons/ri";
 import './Navigation.css';
@@ -11,10 +11,12 @@ function Navigation() {
 
     // Placeholder function for handling search
     const handleSearch = (event) => {
-        event.preventDefault();
-        console.log(searchTerm);
-        // Implement search functionality here
-    };
+      event.preventDefault();
+      if (searchTerm.trim() !== "") {
+          window.location.href = `/search/${searchTerm}`;
+      }
+  };
+  
 
     return (
         <div>
@@ -39,6 +41,7 @@ function Navigation() {
                             value={searchTerm}
                             onChange={e => setSearchTerm(e.target.value)}
                         />
+                        
                         <button type="submit" className="search-btn">
                             <FaSearch color="white" />  
                         </button>

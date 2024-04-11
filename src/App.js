@@ -13,6 +13,7 @@ import DetailPage from './pages/DetailPage/DetailPage';
 import Login from './components/Login';
 // coming soon
 import Comingsoon from './pages/Comingsoon/Comingsoon';
+import SearchResult from './components/SearchResult/SearchResult';
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
       <Route path='/loginSignup' element={<LoginSignupPage/>}></Route>
       <Route path="/movie/:id" element={<DetailPage type="movies"/>} ></Route>
       <Route path='/comingsoon' element={<Comingsoon/>}></Route>
-
+      <Route path="/search/:searchTerm" element={<SearchResult />} />
       {/* <Route path='/login' element={<Login/>}></Route> */}
       </Routes>
       </BrowserRouter>
