@@ -25,7 +25,7 @@ function Content(){
 
   const url1 = films?.[1]?.smallPoster;
   const url2 = films?.[3]?.smallPoster;
-  const url3 = films?.[12]?.smallPoster;
+  const url3 = films?.[5]?.smallPoster;
   const url4 = films?.[2]?.smallPoster;
 
 return(

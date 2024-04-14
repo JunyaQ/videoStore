@@ -14,6 +14,7 @@ import Login from './components/Login';
 // coming soon
 import Comingsoon from './pages/Comingsoon/Comingsoon';
 import SearchResult from './components/SearchResult/SearchResult';
+import Profile from './components/Profile/Profile';
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
       <Route path="/movie/:id" element={<DetailPage type="movies"/>} ></Route>
       <Route path='/comingsoon' element={<Comingsoon/>}></Route>
       <Route path="/search/:searchTerm" element={<SearchResult />} />
-      {/* <Route path='/login' element={<Login/>}></Route> */}
+      <Route path='/profile/:userId' element={<Profile/>}></Route>
       </Routes>
       </BrowserRouter>
 

@@ -12,7 +12,7 @@ function Movies(){
     const [films, setFilms] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8080/movies')
+        fetch('http://localhost:8080/featuredMovies')
           .then(res=> res.json())
           .then(data =>{
             console.log(data.body);

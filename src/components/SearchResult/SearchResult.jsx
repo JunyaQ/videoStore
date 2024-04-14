@@ -8,7 +8,7 @@ function SearchResult() {
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/search/${encodeURIComponent(searchTerm)}`)
+    fetch(`http://localhost:8080/search/${searchTerm}`)
       .then(response => response.json())
       .then(data => {
         console.log(data);  

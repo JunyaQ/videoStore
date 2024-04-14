@@ -9,7 +9,7 @@ function Tvs(){
 
     //deploy
     useEffect(() => {
-        fetch('http://localhost:8080/tvs')
+        fetch('http://localhost:8080/featuredTvs')
           .then(res=> res.json())
           .then(data =>{
             console.log(data.body);
@@ -30,7 +30,7 @@ function Tvs(){
         <div id='Tvs' className='movies'>
             <Container fluid>
             <div className='option-container'>
-       <h2 className='mainpageTitle'>New Releases</h2>
+       <h2 className='mainpageTitle'>Featured Tv Shows</h2>
        <Link to="/tvs">
        <button className='optionBtn'> View All</button>
        </Link>

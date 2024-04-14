@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Nav, Navbar, Form, FormControl } from "react-bootstrap";
+import { Container, Nav, Navbar, Form, FormControl, Dropdown } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import { RiMovie2Fill } from "react-icons/ri";
 import './Navigation.css';
@@ -9,14 +9,12 @@ function Navigation() {
     const { user } = useUser();
     const [searchTerm, setSearchTerm] = useState('');
 
-    // Placeholder function for handling search
     const handleSearch = (event) => {
-      event.preventDefault();
-      if (searchTerm.trim() !== "") {
-          window.location.href = `/search/${searchTerm}`;
-      }
-  };
-  
+        event.preventDefault();
+        if (searchTerm.trim() !== "") {
+            window.location.href = `/search/${searchTerm}`;
+        }
+    };
 
     return (
         <div>
@@ -41,16 +39,17 @@ function Navigation() {
                             value={searchTerm}
                             onChange={e => setSearchTerm(e.target.value)}
                         />
-                        
                         <button type="submit" className="search-btn">
                             <FaSearch color="white" />  
                         </button>
                     </Form>
 
                     <Nav className='justify-content-end navlinks'>
-                        <Nav.Link className='navlinks' href='/loginSignup'>
-                            {user ? user.firstName : 'Member'}
-                        </Nav.Link>
+                        {user ? (
+                            <Nav.Link href={`/profile/${user.id}`} className='navlinks'>Profile</Nav.Link>
+                        ) : (
+                            <Nav.Link href='/loginSignup' className='navlinks'>Member</Nav.Link>
+                        )}
                     </Nav>
                 </Container>
             </Navbar>
